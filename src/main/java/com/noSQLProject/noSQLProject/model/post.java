@@ -13,13 +13,15 @@ public class post {
     private String id;
     private String title;
     private String tag;
+    private String description;
     private String text;
     private Date date;
 
-    public post(String id, String title, String tag, String text, Date date) {
+    public post(String id, String title, String tag, String description, String text, Date date) {
         this.id = id;
         this.title = title;
         this.tag = tag;
+        this.description = description;
         this.text = text;
         this.date = date;
     }
@@ -46,6 +48,14 @@ public class post {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getText() {
