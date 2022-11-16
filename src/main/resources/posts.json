@@ -1,0 +1,50 @@
+[{
+  "_id": {
+    "$oid": "6177a31824f1d205e0b0692d"
+  },
+  "title"  : "Why is Music So Powerful?",
+  "tag": "music",
+  "description": "Music is such a powerful tool. It has been scientifically proven that it has the ability to change our moods.",
+  "text":"A new neuroscience-based study has identified that if specific music evokes personal memories, these songs have the power to elicit stronger positive emotions than other stimuli, such as looking at a nostalgic picture. The goal of this study was to investigate the mechanisms by which music and photographs trigger pleasant or unpleasant emotions. Most significantly, the researchers found that while upbeat music (such as dance songs) reliably boosts someone's mood, the most potent factor for evoking powerful positive emotions and pleasure via music was linked to personal memories. Notably, the three feelings most strongly associated with pleasant valence while listening to music were joy, strength, and relaxation.",
+  "_class": "com.noSQLProject.noSQLProject.model",
+  "date": {
+    "$date": "2021-02-04T07:04:03.321Z"
+  }
+},{
+  "_id": {
+    "$oid": "6177a3648207e0587345067a"
+  },
+  "title"  : "Reasons to watch movies",
+  "tag": "movie",
+  "description": "This article explains why watching movies has huge benefits on our day to day life",
+  "text":"Did you know that cinema therapy exists? Cinemetherapy (movie therapy) is a form of expressive therapy for overcoming medical and mental health issues. This therapy can change an individual’s negative thoughts, bad habits, and the ability to manage life events. People who attend cinema therapy are watching movies that reflect their current issues.Comedies, for example, make us laugh, and laughing for 15 minutes is just as good for your heart as exercise, said cardiologist Dr. Michael Miller of the University of Maryland. But don't underestimate the sad movies! Sad movies have a positive effect on your brain chemistry too. According to scientists from Oxford University, watching a traumatic movie can boost the production of endorphins, a chemical associated with increased pain tolerance. So, sad movies can actually make you feel good.",
+  "_class": "com.noSQLProject.noSQLProject.model",
+  "date": {
+    "$date": "2021-02-04T07:04:03.321Z"
+  }
+},{
+  "_id": {
+    "$oid": "6177a39b665edf352cf74f90"
+  },
+  "title"  : "Ways to foster IT innovation",
+  "tag": "Technology",
+  "description": "Building a culture of innovation doesn't happen by chance. It requires planning, commitment, and leadership effort.",
+  "text":"As an IT leader, being able to foster innovation not only benefits the IT itself, with greater efficiency, effectiveness and value, but the organization it serves and you personally, as it illustrates your ability to be an internal agent of change, a true business partner, and an asset at the strategy table. Asking your team to be innovative is like asking an athlete to play better. While it may feel motivational and instructive to say it, it’s most often taken as disapproving and vague to the person receiving it. So if you want people to innovate, define specifically what you’re looking for them to do. Think specificity. My definition of IT innovation: The successful creation, implementation, enhancement, or improvement of a technical process, business process, software product, hardware product, or cultural factor that reduces costs, enhances productivity, increases organizational competitiveness, or provides other business value. While this description is rather long, use its components and concepts to define your own definition, based on your organization’s current needs and your future IT vision. ",
+  "_class": "com.noSQLProject.noSQLProject.model",
+  "date": {
+    "$date": "2021-02-04T07:04:03.321Z"
+  }
+},{
+  "_id": {
+    "$oid": "6178f9e3c2533871717abaf2"
+  },
+  "title"  : "Benefits of Reading Books",
+  "tag": "Books",
+  "description": "Reading in school and work is innevitable but I am going to be telling you why reading is great when done in your own time.",
+  "text":"In the 11th century, a Japanese woman known as Murasaki Shikibu wrote “The Tale of Genji,” a 54-chapter story of courtly seduction believed to be the world’s first novel. Over 1,000 years later, people the world over are still engrossed by novels — even in an era where stories appear on handheld screens and disappear 24 hours later. What exactly do human beings get from reading books? Is it just a matter of pleasure, or are there benefits beyond enjoyment? The scientific answer is a resounding “yes.” Reading books benefits both your physical and mental health, and those benefits can last a lifetime. They begin in early childhood and continue through the senior years. Here’s a brief explanation of how reading books can change your brain — and your body — for the better. Reading strengthens your brain. It increases your ability to empathize and helps prevent age-related cognitive decline",
+  "_class": "com.noSQLProject.noSQLProject.model",
+  "date": {
+    "$date": "2021-02-04T07:04:03.321Z"
+  }
+
+}]
