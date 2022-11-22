@@ -12,9 +12,7 @@ public class Tutorial {
 
     private String title;
 
-    @Enumerated(EnumType.STRING)
-    private TutorialType tutorialType;
-    //private String tutorialType;
+    private String tutorialType;
 
     @Lob
     private String content ;
@@ -22,7 +20,7 @@ public class Tutorial {
     public Tutorial() {
     }
 
-    public Tutorial(int id, String title, TutorialType tutorialType, String content) {
+    public Tutorial(int id, String title, String tutorialType, String content) {
         this.id = id;
         this.title = title;
         this.tutorialType = tutorialType;
@@ -45,11 +43,11 @@ public class Tutorial {
         this.title = title;
     }
 
-    public TutorialType getTutorialType() {
+    public String getTutorialType() {
         return tutorialType;
     }
 
-    public void setTutorialType(TutorialType tutorialType) {
+    public void setTutorialType(String tutorialType) {
         this.tutorialType = tutorialType;
     }
 

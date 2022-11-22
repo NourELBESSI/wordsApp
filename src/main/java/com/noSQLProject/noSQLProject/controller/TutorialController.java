@@ -17,7 +17,7 @@ public class TutorialController {
     private TutorialRepo tutorialRepo;
 
     @GetMapping("/tutorials")
-    public List getPosts() {
+    public List getTutorials() {
         //List<post> allPosts = postRepo.findAll();
         List<Tutorial> alltutorials = tutorialRepo.findAll();
         return  alltutorials;

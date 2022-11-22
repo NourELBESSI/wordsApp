@@ -8,12 +8,13 @@
 		<version>2.7.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.noSQLProject</groupId>
-	<artifactId>noSQLProject</artifactId>
+	<groupId>com.nosqlproject</groupId>
+	<artifactId>nosqlproject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>noSQLProject</name>
+	<name>nosqlproject</name>
 	<description>Projet big data</description>
 	<properties>
+		<docker.image.prefix>projectdocker</docker.image.prefix>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
@@ -51,7 +52,6 @@
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
-			<version>2.1.6.RELEASE</version>
 		</dependency>
 	</dependencies>
 
@@ -61,7 +61,39 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>1.4.9</version>
+				<configuration>
+					<repository>${docker.image.prefix}/${project.artifactId}</repository>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.3.0</version>
+				<executions>
+					<execution>
+						<id>unpack</id>
+						<phase>package</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>${project.groupId}</groupId>
+									<artifactId>${project.artifactId}</artifactId>
+									<version>${project.version}</version>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
+		<finalName>nosql</finalName>
 	</build>
 
 </project>
