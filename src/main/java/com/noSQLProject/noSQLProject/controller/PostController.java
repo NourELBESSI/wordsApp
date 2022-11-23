@@ -1,28 +1,28 @@
 package com.noSQLProject.noSQLProject.controller;
 
 
-import com.noSQLProject.noSQLProject.repo.postRepo;
+import com.noSQLProject.noSQLProject.repo.PostRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.noSQLProject.noSQLProject.model.post;
+import com.noSQLProject.noSQLProject.model.Post;
+
 
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-public class postController {
+public class PostController {
 
     @Autowired
-    private postRepo postsrepo;
+    private PostRepo postsrepo;
 
     @GetMapping("/posts")
     public List getPosts() {
         //List<post> allPosts = postRepo.findAll();
-        List<post> allpost = postsrepo.findAll();
+        List<Post> allpost = postsrepo.findAll();
         return  allpost;
     }
 
     @PostMapping("/posts")
-    public post addpost(@RequestBody post postadded){return postsrepo.save(postadded); }
+    public Post addpost(@RequestBody Post postadded){return postsrepo.save(postadded); }
 }

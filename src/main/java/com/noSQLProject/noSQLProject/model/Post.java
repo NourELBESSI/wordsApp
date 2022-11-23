@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "posts")
-public class post {
+public class Post {
 
     @Id
     private String id;
@@ -17,7 +17,7 @@ public class post {
     private String text;
     private Date date;
 
-    public post(String id, String title, String tag, String description, String text, Date date) {
+    public Post(String id, String title, String tag, String description, String text, Date date) {
         this.id = id;
         this.title = title;
         this.tag = tag;

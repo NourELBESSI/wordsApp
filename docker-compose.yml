@@ -1,0 +1,48 @@
+version: '3.1'
+
+services:
+  app:
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/words
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=""
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_DATA_MONGODB_HOST=mongodb
+      - SPRING_DATA_MONGODB_PORT=27017
+      - SPRING_DATA_MONGODB_DATABASE=stories
+    image: 'nosql'
+    ports:
+      - "9090:9090"
+    build:
+      context: .
+    container_name: app
+    networks:
+      - network_all
+    depends_on:
+      - postgresql
+      - mongodb
+
+  postgresql:
+    image: postgres
+    container_name: postgresql
+    hostname: postgresql
+    networks:
+      - network_all
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=""
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=words
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    hostname: mongodb
+    restart: always
+    networks:
+      - network_all
+    ports:
+      - "27017:27017"
+networks:
+  network_all: { }
