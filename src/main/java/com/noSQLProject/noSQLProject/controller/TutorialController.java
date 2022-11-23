@@ -1,6 +1,4 @@
 package com.noSQLProject.noSQLProject.controller;
-
-
 import com.noSQLProject.noSQLProject.model.Post;
 import com.noSQLProject.noSQLProject.model.Tutorial;
 import com.noSQLProject.noSQLProject.repo.PostRepo;

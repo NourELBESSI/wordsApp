@@ -1,12 +1,7 @@
 package com.noSQLProject.noSQLProject.model;
-
-
-import org.springframework.boot.context.properties.ConfigurationProperties;
-
 import javax.persistence.*;
 
 
-//@ConfigurationProperties("postgresql")
 @Entity
 public class Tutorial {
 
