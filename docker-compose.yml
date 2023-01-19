@@ -3,9 +3,9 @@ version: '3.1'
 services:
   app:
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/words
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=""
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
       - SPRING_DATA_MONGODB_HOST=mongodb
       - SPRING_DATA_MONGODB_PORT=27017
@@ -17,7 +17,7 @@ services:
       context: .
     container_name: app
     networks:
-      - network_all
+      network_all: { }
     depends_on:
       - postgresql
       - mongodb
@@ -27,20 +27,28 @@ services:
     container_name: postgresql
     hostname: postgresql
     networks:
-      - network_all
+      network_all: { }
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_PASSWORD=""
-      - POSTGRES_USER=postgres
-      - POSTGRES_DB=words
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=admin
+    volumes:
+      - "./src/main/resources/postgres/script:/docker-entrypoint-initdb.d"
+      - "postgres-volume:/var/lib/postgresql/data"
+  adminer:
+    image: adminer
+    ports:
+      - 8020:8080
+    networks:
+      network_all: { }
   mongodb:
     image: mongo:latest
     container_name: mongodb
     hostname: mongodb
     restart: always
     networks:
-      - network_all
+      network_all: { }
     ports:
       - "27017:27017"
     volumes:
@@ -50,6 +58,7 @@ services:
       - mean_urls_data:/data/db
 volumes:
   mean_urls_data:
+  postgres-volume:
 
 networks:
   network_all: { }
