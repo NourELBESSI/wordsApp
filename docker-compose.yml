@@ -9,7 +9,6 @@ services:
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
       - SPRING_DATA_MONGODB_HOST=mongodb
       - SPRING_DATA_MONGODB_PORT=27017
-      - SPRING_DATA_MONGODB_DATABASE=stories
     image: 'nosql'
     ports:
       - "9090:9090"
@@ -52,13 +51,11 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - ./scripts/mongo/init/:/docker-entrypoint-initdb.d
-      - ./scripts/mongo/init:/home/mongodb
-      - ./scripts/mongo/seed/:/home/mongodb/seed
-      - mean_urls_data:/data/db
+      - "mongodb-data:/data/db"
+      - "./src/main/resources/mongo/script/init.js:/docker-entrypoint-initdb.d/init.js"
 volumes:
-  mean_urls_data:
   postgres-volume:
+  mongodb-data:
 
 networks:
   network_all: { }
